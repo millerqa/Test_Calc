@@ -9,7 +9,7 @@ import org.testng.Assert;
 
 
 
-public class PositiveCalculatorTest {
+public class PositiveCalculatorTest extends BaseTest {
 
         WebDriver driver;
 
@@ -17,8 +17,6 @@ public class PositiveCalculatorTest {
     @Test
     public void testAdd() throws InterruptedException {
 
-        BaseTest tes = new BaseTest();
-        tes.runBeforeTestMethod();
         CalculatorPage calculator = new CalculatorPage(driver);
         calculator.enterNumber2();
         calculator.add();
@@ -26,7 +24,7 @@ public class PositiveCalculatorTest {
         calculator.equal();
         Assert.assertEquals(calculator.getResult().toString(), "6");
         System.out.println("Result is : " + calculator.getResult());
-        tes.runAfterTestMethod();
+
 
     }
 
